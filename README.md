@@ -21,16 +21,25 @@ Una guía paso a paso sobre cómo construir y ejecutar la imagen Docker:
 2. **Construir la imagen Docker**:
 
     ```bash
-   docker build -t data-base-dar .
+   docker build -t dar-db-local .
     ```
 3. **Ejecutar el contenedor Docker**:
 
     ```bash
-   docker run -d -p 28000:28000 --name contenedor-db-dar data-base-dar
+   docker run -d -p 28000:27017 --name dar-db-local-contenedor dar-db-local
     ```
+4. **URI de conexion local**
+
+    El user y password estan en el archivo init-mongo.js
+    ```bash
+    mongodb://user:password@localhost:28000
+    ```
+
 ### Despliegue 📦
 Si deseas desplegar esto en un entorno de producción, asegúrate de seguir las mejores prácticas de seguridad para la configuración de MongoDB y Docker.
 
 ---
 
-© 2024 [Igor Ramos Cruzado](mailto:igor.ramos.cruzado.w@gmail.com). Todos los derechos reservados.
+© 2024 [CODE GNIUS](https://github.com/gnius-pe). Todos los derechos reservados.
+
+Este proyecto está alojado en el repositorio [dar-db-local](https://github.com/gnius-pe/data-base-dar). El uso del código y los recursos de este proyecto están sujetos a los términos de la licencia [Licencia MIT](./LICENSE).
